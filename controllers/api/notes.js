@@ -20,6 +20,7 @@ async function create(req, res) {
 async function getAll(req, res) {
   try {
     const notes = await Note.find({ user: req.user });
+    console.log(notes)
     res.json(notes);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch notes.' });

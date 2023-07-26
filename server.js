@@ -9,12 +9,11 @@ require('dotenv').config();
 require('./config/database');
 
 const app = express();
-const usersRoute = require('./api/users');
+const usersRoute = require('./routes/api/users');
 
 app.use(logger('dev'));
 app.use(express.json());
 
-app.use(cors({ origin: 'http://localhost:3000' }));
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
